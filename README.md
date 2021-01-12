@@ -1,2 +1,4 @@
 # GHam83.github.io
-website
+This is my portfolio website. Thanks for visiting!
+
+Greg
