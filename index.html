@@ -16,7 +16,7 @@
             <a class="active" href="#Home">Home</a>
             <a href="#About">About</a>
             <a href="#GitHub">GitHub</a>
-            <a href="#Contact">Contact</a>
+            <a onclick="openForm()" ondblclick="closeForm()">Contact</a>
         </div>
 
         <!--Breaks inserted to add space between navbar and the first heading-->
@@ -52,7 +52,54 @@
         <div class="Row" id="About">
             <!--Left column-->
             <div class="Column_2">
-                <img src="Prestige.jpg" alt="I get the job done.">
+                <div id="Slideshow">
+                    <div id="Slideshow_Background"> 
+                      <div id="Slideshow_Container">
+                        
+                        <div class="mySlides fade">
+                          <div class="Slide_Number">1 / 4</div>
+                            <img class="Slide_Show_Images" src="Prestige.jpg" style="width:100%">
+                              <div class="text">I get the job done.</div>
+                        </div>
+                        
+                        <div class="mySlides fade">
+                          <div class="Slide_Number">2 / 4</div>
+                            <img class="Slide_Show_Images" src="stack.jfif" style="width:100%">
+                              <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,</div>
+                        </div>
+                
+                        <div class="mySlides fade">
+                          <div class="Slide_Number">3 / 4</div>
+                            <img class="Slide_Show_Images" src="python.jfif" style="width:100%">
+                              <div class="text">the popular programming language Python,</div>
+                        </div>
+                
+                        <div class="mySlides fade">
+                          <div class="Slide_Number">4 / 4</div>
+                            <img class="Slide_Show_Images" src="pete.jpeg" style="width:100%">
+                              <div class="text"> 
+                                <a onclick="openForm()" href="#Contact" style="color:white;">Contact me now!</a>
+                              </div>
+                        </div>
+                    
+                          <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
+                          <a class="Next" onclick="plusSlides(1)">&#10095;</a>
+                        
+                      </div>
+                  <br>
+                
+                      <div style="text-align:center">
+                 
+                        <span class="dot" onclick="currentSlide(1)"></span> 
+                        <span class="dot" onclick="currentSlide(2)"></span> 
+                        <span class="dot" onclick="currentSlide(3)"></span> 
+                        <span class="dot" onclick="currentSlide(4)"></span> 
+                        <span class="dot" onclick="currentSlide(5)"></span> 
+                        <span class="dot" onclick="currentSlide(6)"></span> 
+                
+                      </div>
+                    </div>
+                  </div>
             </div>
             <!--Right column-->
             <div class="Column_1">
@@ -62,7 +109,7 @@
                     <br>
                     <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech Academy</a>’s Software Developer Boot Camp, and trained and experienced in the following web and programming languages: HTML, CSS, JavaScript, SQL, C# and more. 
                     <br>
-                    <br>I am a full-stack developer that is always trying to learn more. I look forward to gaining more experience and building more relationships in the wonderful world of tech! <a href="#Contact">Contact</a> me below!
+                    <br>I am a full-stack developer that is always trying to learn more. I look forward to gaining more experience and building more relationships in the wonderful world of tech! Contact me <a onclick="openForm()" ondblclick="closeForm()">here</a>
                 </p>
             </div>
         </div>
@@ -76,7 +123,7 @@
                     You can view my coding projects on my GitHub profile here:
                     <br>
                     <p class="center"><a href="https://github.com/GHam83" target="_blank">GHam83's Github</a></p><br>
-                    More on the way!!!
+                    Coming Soon...to a website near you.
                 </p>
             </div>
             <!--Right column-->
@@ -87,27 +134,23 @@
 
         <!--Contact section-->
         <div class="Row" id="Contact">
-            <!--Contact image, left column-->
-            <div class="Column_2 Column_tall">
-                <video autoplay muted loop id="ball">
-                    <source src="Ball - 3260.mp4" type="video/mp4">
-                    Your browser does not support this video.
-                </video> 
-                  
-            </div>
-            <!--Contact form, right column-->
-            <div class="Column_1 Column_tall">
-                <h1>Contact</h1>
-                <!--This specifies where and how to send the form data; we are leaving it blank-->
-                <form action="" method="POST"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
-                    <label>Name:</label>
-                        <input type="text" placeholder="Please enter your name here">
-                    <label>Email:</label>
-                        <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
-                    <label>Message:</label>
-                        <input type="text" id="Message" name="Message" placeholder="Please write your message here">
-                        <input type="submit" value="SUBMIT">
-                </form>
+            <div id = "Contact">
+                <div class="form-popup" id="myForm">
+                    
+                    
+                    <!--This specifies where and how to send the form data; we are leaving it blank-->
+                    <form action="https://formspree.io/f/mrgoroaz" method="POST" class="form-container"> <!-- Here we are utilizing a 3rd party service to submit the contact form data, insert your formspree endpoint in the action attribute -->
+                        <label>Name:</label>
+                            <input type="text" placeholder="Please enter your name here">
+                        <label>Email:</label>
+                            <input type="text" id="Email" name="Email" placeholder="Please enter your email here">
+                        <label>Message:</label>
+                            <input type="text" id="Message" name="Message" placeholder="Please write your message here">
+                            
+                <button type="submit" class="btn">SUBMIT</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                    </form>
+                </div>
             </div>
         </div>
 
@@ -118,5 +161,6 @@
             
             </p>
         </footer>
+        <script src= "portfolio.js"></script>
     </body>
 </html>
